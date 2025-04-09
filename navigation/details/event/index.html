@@ -1,7 +1,7 @@
 <script>
   (async()=>{
     const params=new URLSearchParams(window.location.search);
-    const eventId=params.get('eventId')||params.get('id');
+    const eventId=[...new URLSearchParams(window.location.search).values()]?.[0];//params.get('eventId')||params.get('id');
     if(!Number(eventId))return document.querySelector('html').innerHTML="bundleId/id";
     return window.location=`roblox://navigation/event_details?eventId=${eventId}`;
   })()

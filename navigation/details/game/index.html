@@ -1,7 +1,7 @@
 <script>
   (async()=>{
     const params=new URLSearchParams(window.location.search);
-    const gameId=params.get('gameId')||params.get('universeId')||params.get('id');
+    const gameId=[...new URLSearchParams(window.location.search).values()]?.[0];//params.get('gameId')||params.get('universeId')||params.get('id');
     if(!Number(gameId))return document.querySelector('html').innerHTML="gameId/universeId/id";
     return window.location=`roblox://navigation/game_details?gameId=${gameId}`;
   })()

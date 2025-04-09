@@ -1,7 +1,7 @@
 <script>
   (async()=>{
     const params=new URLSearchParams(window.location.search);
-    const groupId=params.get('groupId')||params.get('gId')||params.get('id');
+    const groupId=[...new URLSearchParams(window.location.search).values()]?.[0];//params.get('groupId')||params.get('gId')||params.get('id');
     if(!Number(groupId))return document.querySelector('html').innerHTML="groupId";
     return window.location=`roblox://navigation/group?groupId=${groupId}`;
   })()

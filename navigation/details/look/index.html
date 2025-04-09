@@ -1,7 +1,7 @@
 <script>
   (async()=>{
     const params=new URLSearchParams(window.location.search);
-    const itemId=params.get('lookId')||params.get('itemId')||params.get('id');
+    const itemId=[...new URLSearchParams(window.location.search).values()]?.[0];//params.get('lookId')||params.get('itemId')||params.get('id');
     if(!Number(itemId))return document.querySelector('html').innerHTML="lookId/itemId/id";
     return window.location=`roblox://navigation/item_details?itemId=${lookId}&itemType=Look`;
   })()

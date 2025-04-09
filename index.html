@@ -1,0 +1,15 @@
+<script>
+  (async()=>{
+    const params=new URLSearchParams(window.location.search);
+    const placeId=params.get('placeId');
+    if(!placeId||!Number(placeId))return document.querySelector('html').innerHTML="placeId";
+    const rbx='roblox://placeId='+placeId;
+    const gameInstanceId=params.get('gameInstanceId');
+    const accessCode=params.get('accessCode');
+    const linkCode=params.get('linkCode');
+    const reservedServerAccessCode=params.get('reservedServerAccessCode');
+    if(!(gameInstanceId||accessCode||linkCode||reservedServerAccessCode))return window.location=rbx;
+    const args={gameInstanceId,accessCode,linkCode,reservedServerAccessCode};
+    window.location=rbx+'&'+Object.entries(args).filter(v=>v[1]).map(v=>v.join('=')).join('&');
+  })()
+</script>

@@ -1,7 +1,8 @@
 <script>
   (async()=>{
     const params=new URLSearchParams(window.location.search);
-    const placeId=params.get('placeId');
+    const userId=params.get('userId')||params.get('uId');if(userId)return window.location=`roblox://userId=${userId}`;
+    const placeId=params.get('placeId')||params.get('pId')||params.get('id');
     if(!placeId||!Number(placeId))return document.querySelector('html').innerHTML="placeId";
     const rbx='roblox://placeId='+placeId;
     const gameInstanceId=params.get('gameInstanceId');

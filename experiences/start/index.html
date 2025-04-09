@@ -1,7 +1,7 @@
 <script>
   (async()=>{
     const params=new URLSearchParams(window.location.search);
-    const placeId=params.get('placeId');
+    const placeId=params.get('placeId')||params.get('pId')||params.get('id');
     if(!placeId||!Number(placeId))return document.querySelector('html').innerHTML="placeId";
     const rbx='roblox://experiences/start?placeId='+placeId;
     const gameInstanceId=params.get('gameInstanceId');

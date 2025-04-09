@@ -1,4 +1,4 @@
-# navigation
+# details
 
 [asset?assetId=](asset?assetId=)
 

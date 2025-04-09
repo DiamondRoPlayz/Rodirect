@@ -1,0 +1,9 @@
+<script>
+  (async()=>{
+    const params=new URLSearchParams(window.location.search);
+    const userId=params.get('userId');
+    const postId=params.get('postId');
+    if(!(Number(userId)&&postId))return document.querySelector('html').innerHTML="userId & postId";
+    return window.location=`roblox://navigation/content_posts?userId=${userId}&postId=${postId}`;
+  })()
+</script>

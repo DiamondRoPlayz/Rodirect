@@ -4,6 +4,6 @@
     const itemId=params.get('itemId')||params.get('id');
     const itemType=params.get('itemType')||params.get('type');
     if(!(Number(itemId)&&itemType))return document.querySelector('html').innerHTML="itemId/id & itemType/type";
-    return window.location=`roblox://navigation/catalog/equip?itemId=${itemId}&itemType=${itemType}`;
+    return window.location=`roblox://navigation/item_details?itemId=${itemId}&itemType=${itemType}`;
   })()
 </script>

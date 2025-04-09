@@ -3,6 +3,6 @@
     const params=new URLSearchParams(window.location.search);
     const userId=params.get('userId')||params.get('uId')||params.get('id');
     if(!Number(userId))return document.querySelector('html').innerHTML="userId";
-    return window.location=`roblox://navigation/profile?userId=${userId}`;
+    return window.location=`roblox://navigation/profile_card?userId=${userId}`;
   })()
 </script>

@@ -1,0 +1,9 @@
+<script>
+  (async()=>{
+    const params=new URLSearchParams(window.location.search);
+    const type=params.get('type');
+    const code=params.get('code');
+    if(!(type&&code))return document.querySelector('html').innerHTML="type & code";
+    return window.location=`roblox://navigation/share_links?type=${type}&code=${code}`;
+  })()
+</script>

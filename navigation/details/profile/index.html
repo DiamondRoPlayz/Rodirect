@@ -1,0 +1,8 @@
+<script>
+  (async()=>{
+    const params=new URLSearchParams(window.location.search);
+    const userId=params.get('userId')||params.get('id');
+    if(!Number(userId))return document.querySelector('html').innerHTML="userId/id";
+    return window.location=`roblox://navigation/profile_details?userId=${userId}`;
+  })()
+</script>

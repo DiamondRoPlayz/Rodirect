@@ -1,0 +1,8 @@
+<script>
+  (async()=>{
+    const params=new URLSearchParams(window.location.search);
+    const placeId=params.get('placeId')||params.get('pId')||params.get('id');
+    if(!Number(placeId))return document.querySelector('html').innerHTML="placeId/id";
+    return window.location=`roblox://navigation/game_details?placeId=${placeId}`;
+  })()
+</script>

@@ -1,8 +1,8 @@
 <script>
   (async()=>{
     const params=new URLSearchParams(window.location.search);
-    const itemId=params.get('itemId');
-    const itemType=params.get('itemType');
+    const itemId=params.get('itemId')||params.get('id');
+    const itemType=params.get('itemType')||params.get('type');
     if(!(Number(itemId)&&itemType))return document.querySelector('html').innerHTML="itemId & itemType";
     return window.location=`roblox://navigation/catalog/equip?itemId=${itemId}&itemType=${itemType}`;
   })()

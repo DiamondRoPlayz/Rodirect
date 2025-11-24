@@ -2,7 +2,7 @@
   <title>RoDirect</title>
   <script>
     (async()=>{
-      const query=window.location.pathname.split('/').slice(1);console.log(query);
+      const query=window.location.pathname.split('/').slice(2);console.log(query);
       const placeId=query[0];
       if(!placeId||!Number(placeId))return document.querySelector('html').innerHTML="placeId";
       const rbx='roblox://placeId='+placeId;
